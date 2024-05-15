@@ -23,13 +23,16 @@
 <body>
     
     <div id="app">
+        <h1 class="p-2 text-center">{{ title }}</h1>
         <div class="text-center">
             <input class="w-25 p-1 mx-1" type="number" name="numero" placeholder="Quante mail vuoi generare?" v-model="userInput">
-            <button class="p-1" @click="randomMail()">Genera</button>
+            <button type="button" class="btn btn-outline-success p-1 align-baseline" @click="randomMail()">Genera</button>
         </div>
-        <ol>
-            <li v-for="element, i in arrayMail" v-if="arrayMail.length == userInput"> {{ element }} </li>
-        </ol>
+        <ul class="p-3 list-group align-items-center">
+            <li v-for="element, i in arrayMail" v-if="arrayMail.length == userInput" class="w-50 p-2 text-center list-group-item">
+                {{ element }} 
+            </li>
+        </ul>
     </div>
 
     <script src="./js/main.js"></script>

@@ -29,6 +29,7 @@ createApp({
     return {
       arrayMail: [],
       userInput : "",
+      title : "Genera il numero di mail che vuoi"
     }
   },
   methods: {
