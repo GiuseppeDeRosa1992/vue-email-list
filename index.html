@@ -24,7 +24,7 @@
     
     <div id="app">
         <ul>
-            <li v-for="element, i in arrayMail"> {{ element }} </li>
+            <li v-for="element, i in arrayMail" v-if="arrayMail.length == 10"> {{ element }} </li>
         </ul>
     </div>
 
