@@ -23,9 +23,13 @@
 <body>
     
     <div id="app">
-        <ul>
-            <li v-for="element, i in arrayMail" v-if="arrayMail.length == 10"> {{ element }} </li>
-        </ul>
+        <div class="text-center">
+            <input class="w-25 p-1 mx-1" type="number" name="numero" placeholder="Quante mail vuoi generare?" v-model="userInput">
+            <button class="p-1" @click="randomMail()">Genera</button>
+        </div>
+        <ol>
+            <li v-for="element, i in arrayMail" v-if="arrayMail.length == userInput"> {{ element }} </li>
+        </ol>
     </div>
 
     <script src="./js/main.js"></script>
