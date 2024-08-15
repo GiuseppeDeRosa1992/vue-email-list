@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--                Importo VUE.JS             --> 
+    <!--                Importo VUE.JS             -->
     <script src="https://unpkg.com/vue@3.4.27/dist/vue.global.js"></script>
 
     <!--                Importo AXIOS         -->
@@ -21,16 +21,20 @@
 </head>
 
 <body>
-    
+
     <div id="app">
+        <!-- <h2>Numero Utente:{{numberInput}} Dato Utente:{{userInput}}</h2>  PER DEBUGGARE-->
         <h1 class="p-2 text-center">{{ title }}</h1>
         <div class="text-center">
-            <input class="w-25 p-1 mx-1" type="number" name="numero" placeholder="Quante mail vuoi generare?" v-model="userInput">
-            <button type="button" class="btn btn-outline-success p-1 align-baseline" @click="randomMail()">Genera</button>
+            <input class="w-25 p-1 mx-1" type="number" name="numero" placeholder="Quante mail vuoi generare?"
+                v-model="userInput" required>
+            <button type="submit" class="btn btn-outline-success px-1 align-baseline" @click="randomMail()">Genera
+                Mail</button>
         </div>
         <ul class="p-3 list-group align-items-center">
-            <li v-for="element, i in arrayMail" v-if="arrayMail.length == userInput" class="w-50 p-2 text-center list-group-item">
-                {{ element }} 
+            <li v-for="element, i in arrayMail" v-if="numberInput == arrayMail.length"
+                class="w-50 p-2 text-center list-group-item">
+                {{ element }}
             </li>
         </ul>
     </div>
